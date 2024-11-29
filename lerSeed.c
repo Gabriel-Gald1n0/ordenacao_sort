@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define NUMEROS 100
+#define NUMEROS 10000 // Altere sempre o tamanho de NUMEROS pra quando for ler uma seed
 
 typedef struct
 {
@@ -15,7 +15,7 @@ int main(void)
     int i = 0;
     Seed = malloc(NUMEROS * sizeof(NUM));
 
-    fp = fopen("seed_01.dat", "rb");
+    fp = fopen("seed_03.dat", "rb"); // altere seu nome também pra abrir
     
     if(fp == NULL) 
     {

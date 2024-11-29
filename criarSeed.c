@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define NUMEROS 100
+#define NUMEROS 10000 // Altere sempre o tamanho de NUMEROS pra quando for ler uma seed
 
 // Armazenando as informações de um aluno
 typedef struct {
@@ -19,7 +19,7 @@ int main(void) {
     srand(time(NULL));
 
     // abre um arquivo binário para escrita
-    fp = fopen("seed_01.dat", "wb");
+    fp = fopen("seed_03.dat", "wb"); // // altere seu nome também para criar
 
     if (fp == NULL) {
         printf("Arquivo não pode ser aberto\n");
@@ -40,5 +40,5 @@ int main(void) {
 }
 
 void geraSeed(NUM *seed) {
-    seed->valor = (rand() % 99) + 1;  // Atribui um valor aleatório entre 1 e 99
+    seed->valor = (rand() % (NUMEROS - 1)) + 1;  // Atribui um valor aleatório entre 1 e 99
 }
