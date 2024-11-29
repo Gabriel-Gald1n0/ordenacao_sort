@@ -5,10 +5,6 @@ int main() {
     int i, size;
     const char *filenames[] = {"../seed/seed_01.dat", "../seed/seed_02.dat", "../seed/seed_03.dat"}; 
 
-    // Variáveis para contagem de tempo
-    LARGE_INTEGER frequency, start, end;
-    QueryPerformanceFrequency(&frequency);  // Obtém a frequência do contador
-
     // Loop para cada tamanho
     for (i = 0; i < 3; i++) {
         size = sizes[i];
@@ -24,7 +20,11 @@ int main() {
         readArrayFromFile(array, size, filenames[i]);
         
         printf("Tamanho do Array: %d\n", size);
-        
+
+        // Número de repetições para medir o tempo com mais precisão
+        int repetitions = 10;
+        clock_t start, end;
+
         // Quick Sort
         int *tempArray = (int *)malloc(size * sizeof(int));
         if (tempArray == NULL) {
@@ -34,10 +34,12 @@ int main() {
         }
         copyArray(array, tempArray, size);
 
-        QueryPerformanceCounter(&start);  // Marca o início
-        quickSort(tempArray, 0, size - 1);
-        QueryPerformanceCounter(&end);  // Marca o fim
-        printf("Quick Sort: %.6f segundos\n", (double)(end.QuadPart - start.QuadPart) / frequency.QuadPart);
+        start = clock();
+        for (int j = 0; j < repetitions; j++) {
+            quickSort(tempArray, 0, size - 1);
+        }
+        end = clock();
+        printf("Quick Sort: %.6f segundos\n", (double)(end - start) / CLOCKS_PER_SEC / repetitions);
         free(tempArray);
 
         // Bubble Sort
@@ -49,10 +51,12 @@ int main() {
         }
         copyArray(array, tempArray, size);
 
-        QueryPerformanceCounter(&start);  // Marca o início
-        bubbleSort(tempArray, size);
-        QueryPerformanceCounter(&end);  // Marca o fim
-        printf("Bubble Sort: %.6f segundos\n", (double)(end.QuadPart - start.QuadPart) / frequency.QuadPart);
+        start = clock();
+        for (int j = 0; j < repetitions; j++) {
+            bubbleSort(tempArray, size);
+        }
+        end = clock();
+        printf("Bubble Sort: %.6f segundos\n", (double)(end - start) / CLOCKS_PER_SEC / repetitions);
         free(tempArray);
 
         // Shell Sort
@@ -64,10 +68,12 @@ int main() {
         }
         copyArray(array, tempArray, size);
 
-        QueryPerformanceCounter(&start);  // Marca o início
-        shellSort(tempArray, size);
-        QueryPerformanceCounter(&end);  // Marca o fim
-        printf("Shell Sort: %.6f segundos\n", (double)(end.QuadPart - start.QuadPart) / frequency.QuadPart);
+        start = clock();
+        for (int j = 0; j < repetitions; j++) {
+            shellSort(tempArray, size);
+        }
+        end = clock();
+        printf("Shell Sort: %.6f segundos\n", (double)(end - start) / CLOCKS_PER_SEC / repetitions);
         free(tempArray);
 
         // Heap Sort
@@ -79,10 +85,12 @@ int main() {
         }
         copyArray(array, tempArray, size);
 
-        QueryPerformanceCounter(&start);  // Marca o início
-        heapSort(tempArray, size);
-        QueryPerformanceCounter(&end);  // Marca o fim
-        printf("Heap Sort: %.6f segundos\n", (double)(end.QuadPart - start.QuadPart) / frequency.QuadPart);
+        start = clock();
+        for (int j = 0; j < repetitions; j++) {
+            heapSort(tempArray, size);
+        }
+        end = clock();
+        printf("Heap Sort: %.6f segundos\n", (double)(end - start) / CLOCKS_PER_SEC / repetitions);
         free(tempArray);
 
         free(array);
