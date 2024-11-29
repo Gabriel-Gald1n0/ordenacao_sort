@@ -3,7 +3,9 @@ Atividade de Estrutura de Dados
 
 ## INFOS
 o `sort.c` foi um arquivo criado pelo gpt
+
 o `sortBin.c` foi o mesmo arquivo só que alterado para ler os numeros desordenados que estão em binario na pasta seed.
+
 o `printSortBin` faz o mesmo que o de cima só que ele gera um arquivo .txt pra saber se esta ordenando ou não ESTE CASO É TRIVIAL POIS FIZ APENAS PARA TESTA!
 
 o `lerSeed.c` e `criarSeed.c` são apenas para ler e criar seed coloquei pra facilitar a vida.
