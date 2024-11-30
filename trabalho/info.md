@@ -36,24 +36,91 @@ Tamanho do Array: 10000
 - Heap Sort: 0.000000 segundos
 
 Tamanho do Array: 1000
-- Quick Sort: 0.001400 segundos
-- Bubble Sort: 0.001000 segundos
+- Quick Sort: 0.001500 segundos
+- Bubble Sort: 0.001100 segundos
 - Shell Sort: 0.000000 segundos
 - Heap Sort: 0.000100 segundos
 
 Tamanho do Array: 10000
-- Quick Sort: 0.089400 segundos
-- Bubble Sort: 0.094900 segundos
+- Quick Sort: 0.121000 segundos
+- Bubble Sort: 0.095700 segundos
 - Shell Sort: 0.000500 segundos
 - Heap Sort: 0.001100 segundos
 
 ### Com 100 repetições
 Tamanho do Array: 100
 
-- Quick Sort: 0.000030 segundos
-- Bubble Sort: 0.000020 segundos
+- Quick Sort: 0.000110 segundos
+- Bubble Sort: 0.000060 segundos
 - Shell Sort: 0.000000 segundos
 - Heap Sort: 0.000020 segundos
+
+Tamanho do Array: 1000
+
+- Quick Sort: 0.001680 segundos
+- Bubble Sort: 0.000880 segundos
+- Shell Sort: 0.000020 segundos
+- Heap Sort: 0.000070 segundos
+
+Tamanho do Array: 10000
+
+- Quick Sort: 0.131850 segundos
+- Bubble Sort: 0.088440 segundos
+- Shell Sort: 0.000310 segundos
+- Heap Sort: 0.001030 segundos
+
+---
+
+### 2° Interação resultados - Executando o mesmo numero de repetições com os mesmo valores uma segunda vez.
+
+
+### Com 1 repetição
+Tamanho do Array: 100
+
+- Quick Sort: 0.000000 segundos
+- Bubble Sort: 0.000000 segundos
+- Shell Sort: 0.000000 segundos
+- Heap Sort: 0.000000 segundos
+
+Tamanho do Array: 1000
+
+- Quick Sort: 0.000000 segundos
+- Bubble Sort: 0.001000 segundos
+- Shell Sort: 0.000000 segundos
+- Heap Sort: 0.000000 segundos
+
+Tamanho do Array: 10000
+
+- Quick Sort: 0.001000 segundos
+- Bubble Sort: 0.131000 segundos
+- Shell Sort: 0.002000 segundos
+- Heap Sort: 0.002000 segundos
+
+### Com 10 repetições
+- Quick Sort: 0.000000 segundos
+- Bubble Sort: 0.000000 segundos
+- Shell Sort: 0.000000 segundos
+- Heap Sort: 0.000000 segundos
+
+Tamanho do Array: 1000
+- Quick Sort: 0.001500 segundos
+- Bubble Sort: 0.000900 segundos
+- Shell Sort: 0.000000 segundos
+- Heap Sort: 0.000100 segundos
+
+Tamanho do Array: 10000
+- Quick Sort: 0.119000 segundos
+- Bubble Sort: 0.091900 segundos
+- Shell Sort: 0.000400 segundos
+- Heap Sort: 0.001000 segundos
+
+### Com 100 repetições
+Tamanho do Array: 100
+
+- Quick Sort: 0.000020 segundos
+- Bubble Sort: 0.000010 segundos
+- Shell Sort: 0.000000 segundos
+- Heap Sort: 0.000010 segundos
 
 Tamanho do Array: 1000
 
@@ -64,34 +131,7 @@ Tamanho do Array: 1000
 
 Tamanho do Array: 10000
 
-- Quick Sort: 0.098030 segundos
-- Bubble Sort: 0.087270 segundos
+- Quick Sort: 0.130270 segundos
+- Bubble Sort: 0.091810 segundos
 - Shell Sort: 0.000310 segundos
-- Heap Sort: 0.001000 segundos
-
----
-
-### 2° Interação resultados - utilizando o QueryPerformanceCounter() e QueryPerformanceFrequency() do windows
-Utilizei o QueryPerformanceCounter() e QueryPerformanceFrequency() pois oferece uma resolução mais alta do que clock()
-
-Obs: caso use linux use o `clock_gettime()` tambem serve
-
-### Com apenas 1 repetição
-Tamanho do Array: 100
-
-- Quick Sort: 0.000005 segundos
-- Bubble Sort: 0.000028 segundos
-- Shell Sort: 0.000006 segundos
-- Heap Sort: 0.000008 segundos
-
-Tamanho do Array: 1000
-- Quick Sort: 0.000069 segundos
-- Bubble Sort: 0.001435 segundos
-- Shell Sort: 0.000103 segundos
-- Heap Sort: 0.000104 segundos
-
-Tamanho do Array: 10000
-- Quick Sort: 0.000883 segundos
-- Bubble Sort: 0.138401 segundos
-- Shell Sort: 0.001462 segundos
-- Heap Sort: 0.001308 segundos
+- Heap Sort: 0.001010 segundos

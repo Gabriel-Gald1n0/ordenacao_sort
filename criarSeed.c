@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define NUMEROS 100 // Altere sempre o tamanho de NUMEROS pra quando for ler uma seed
+#define NUMEROS 10000 // Altere sempre o tamanho de NUMEROS pra quando for ler uma seed
 
 // Armazenando as informações de um aluno
 typedef struct {

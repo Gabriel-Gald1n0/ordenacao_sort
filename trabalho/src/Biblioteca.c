@@ -90,16 +90,22 @@ void copyArray(int origin[], int dest[], int n) {
 }
 
 // Lendo Informações dos arquivos binarios
-void readArrayFromFile(int arr[], int n, const char *filename) {
+void readArrayFromFile(int *arr, int totalSize, const char *filename) {
     FILE *file = fopen(filename, "rb");
     if (file == NULL) {
         printf("Erro ao abrir o arquivo %s\n", filename);
         exit(1);
     }
-    size_t readSize = fread(arr, sizeof(int), n, file);
-    if (readSize != (size_t)n) {
-        printf("Erro ao ler o arquivo %s. Esperado %d elementos, mas foram lidos %lu.\n", filename, n, (unsigned long)readSize);
+
+    size_t readSize = fread(arr, sizeof(int), totalSize, file);
+    fclose(file);
+
+    if (readSize != (size_t)totalSize) {
+        printf("Erro ao ler o arquivo %s. Esperado %d elementos, mas foram lidos %lu.\n",
+               filename, totalSize, (unsigned long)readSize);
         exit(1);
     }
-    fclose(file);
+
 }
+
+
