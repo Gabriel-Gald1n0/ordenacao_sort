@@ -10,6 +10,8 @@
 3. Digite `make` para copilar
 4. Digite `make run` para executar
 
+Obs: No linux a função Clock() foi mais precisa que no windows.
+
 ## 1° interação resultados - utilizando o clock()
 
 ### Com 1 repetição
