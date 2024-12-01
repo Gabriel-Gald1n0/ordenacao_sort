@@ -1,28 +1,35 @@
-# Compilador e flags
-CC := gcc
+# Detectando o Sistema Operacional
+ifeq ($(OS),Windows_NT)
+    EXE_EXT := .exe
+    RM := rm -f
+    CC := gcc
+    RUN := build\Main.exe
+else
+    EXE_EXT :=
+    RM := rm -f
+    CC := gcc
+    RUN := ./build/Main
+endif
+
 OUT_DIR := build
 SRC_DIR := src
 INC_DIR := include
 
 # Alvo padrão
-all: $(OUT_DIR)/Main.exe 
+all: $(OUT_DIR)/Main$(EXE_EXT)
 
-# Compilar Main.exe
-$(OUT_DIR)/Main.exe: $(SRC_DIR)/Main.c $(OUT_DIR)/Biblioteca.o | $(OUT_DIR)
-	$(CC) -o $@ $(SRC_DIR)/Main.c $(OUT_DIR)/Biblioteca.o -I$(INC_DIR)
-
-# Compilar Biblioteca.o
-$(OUT_DIR)/Biblioteca.o: $(SRC_DIR)/Biblioteca.c | $(OUT_DIR)
-	$(CC) -c $(SRC_DIR)/Biblioteca.c -o $@ -I$(INC_DIR)
+# Compilar Main
+$(OUT_DIR)/Main$(EXE_EXT): $(SRC_DIR)/Main.c $(SRC_DIR)/Biblioteca.c | $(OUT_DIR)
+	$(CC) -o $@ $(SRC_DIR)/Main.c $(SRC_DIR)/Biblioteca.c -I$(INC_DIR)
 
 # Criar diretório de saída
 $(OUT_DIR):
 	@mkdir -p $(OUT_DIR)
 
-# Executar Main
-run: $(OUT_DIR)/Main.exe
-	./$(OUT_DIR)/Main.exe
+# Rodar o programa
+run: $(OUT_DIR)/Main$(EXE_EXT)
+	$(RUN)
 
 # Limpar arquivos gerados
 clean:
-	@rm -rf $(OUT_DIR)/*.o $(OUT_DIR)/*.exe
+	$(RM) $(OUT_DIR)/*.o $(OUT_DIR)/*.exe

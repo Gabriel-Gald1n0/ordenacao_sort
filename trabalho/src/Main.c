@@ -17,7 +17,7 @@ int main() {
     readArrayFromFile(fullArray, totalSize, filename);
 
     // Número de repetições para medir o tempo com mais precisão
-    int repetitions = 10;
+    int repetitions = 100;
     printf("Numero de Repeticoes:  %d\n\n", repetitions);
 
     // Loop para cada tamanho
