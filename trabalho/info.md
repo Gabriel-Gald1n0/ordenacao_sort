@@ -5,7 +5,7 @@
 
 ## Rodar o Programa
 
-1. Utilize o MINGW64 / Pode ser no terminal do linux também
+1. Utilize o MINGW64 se estiver no windows / Pode ser no terminal do linux também
 2. Va até o local onde está o arquivo.
 3. Digite `make` para copilar
 4. Digite `make run` para executar
