@@ -42,7 +42,7 @@ void heapify(int arr[], int n, int i) {
     }
 }
 
-// Shell Sort Implementation
+// Shell Sort 
 void shellSort(int arr[], int n) {
     for (int gap = n / 2; gap > 0; gap /= 2) {
         for (int i = gap; i < n; i++) {
@@ -56,7 +56,7 @@ void shellSort(int arr[], int n) {
     }
 }
 
-// Quick Sort Implementation
+// Quick Sort 
 void quickSort(int arr[], int low, int high) {
     if (low < high) {
         int pi = partition(arr, low, high);
